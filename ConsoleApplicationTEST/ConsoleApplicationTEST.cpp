@@ -900,7 +900,25 @@ void date01_07_2024_4() {
         }
         std::cout << std::endl;
     }
-  
+}
+void date01_07_2024() {
+    const int size = 5;
+    int arr[size][size] = {
+        {5, 8, 1, 5, 7},
+        {2, 4, 3, 6, 1},
+        {1, 3, 4, 6, 1},
+        {2, 3, 3, 1, 5},
+        {3, 1, 5, 1, 2},
+    };
+    int sum = 0;
+    for (int a = 0; a < size; a++) {
+        for (int b = 0; b < size; b++) {
+            sum += arr[a][b];
+            std::cout << arr[a][b] << " ";
+        }
+        std::cout << std::endl;
+    }
+    std::cout << sum << std::endl;
 }
 void date01_07_2024_5() {
     /* Создай двумерный динамический массив размером N на N и заполни его с консоли. 
@@ -922,7 +940,7 @@ int main()
 {
     setlocale(LC_ALL, "RU");
 
-    date01_07_2024_4();
+    date01_07_2024();
 
     system("pause");
 }
