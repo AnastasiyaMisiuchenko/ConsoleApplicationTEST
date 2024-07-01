@@ -887,17 +887,18 @@ void date01_07_2024_3() {
 }
 void date01_07_2024_4() {
     /* Создай статический двумерный массив и выведи его в консоль.*/
-    int arr[3][4];
-    int s = sizeof(arr) / sizeof(arr[0][0]);
-    //std::cout << s << std::endl;
-    for (int a = 0; a < 3; a++) {
-        for (int b = 0; b < 4; b++) {
-            for (int i = 0; i < 1; i++){
-                arr[a][b] = i;
-                std::cout << arr[a][b] << std::endl;
-            }
+    const int size = 3;
+    int arr[size][size] = {
+        {1, 3, 4},
+        {4, 5, 3},
+        {3, 5, 1},
+    };
+
+    for (int a = 0; a < size; a++) {
+        for (int b = 0; b < size; b++) {
+            std::cout << arr[a][b] << " ";
         }
-        
+        std::cout << std::endl;
     }
   
 }
@@ -921,7 +922,7 @@ int main()
 {
     setlocale(LC_ALL, "RU");
 
-    date01_07_2024_3();
+    date01_07_2024_4();
 
     system("pause");
 }
