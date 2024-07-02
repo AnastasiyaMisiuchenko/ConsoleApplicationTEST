@@ -133,8 +133,8 @@ void date22_06_2024_1_1_4() {
 
     std::cin >> txt1;
     std::cin >> txt2;
-    txt1[0];//читаем значение элемента массива под индексом 0 
-    txt2[0];
+    //txt1[0];//читаем значение элемента массива под индексом 0 
+   // txt2[0];
     if (txt1[0] == txt2[0]) {
         std::cout << "Первые буквы этих слов совпадают.\n";
     }
@@ -591,7 +591,7 @@ void date26_06_2024_1_6_2() {
 }
 
 void createArray() {
-    int a, b, c;
+  //  int a, b, c;
     
     int sotrudniki[]{ 2, 3, 1 };
     int positionsY[]{ 123, 123, 123, 123, 123 };
@@ -976,11 +976,60 @@ void date01_07_2024_6() {
         std::cout << std::endl;
     }
 }
+bool getTrue() {
+   
+    return true;
+}
+int getSum(int x, int y) {
+    int sum = x + y;
+    return sum;
+}
+int getLastDigital(int x) {
+    int last = x % 10;
+    return last;
+}
+
+int** createDoubleArray(int rows, int cols) {
+    int** arr = new int* [rows];
+    for (int i = 0; i < rows; i++) {
+        arr[i] = new int[cols];
+    }
+    return arr;
+}
+
+void printArray(int** arr, int rows, int cols) {
+
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            std::cout << arr[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+}
+
+
+void setFillArray(int** arr, int rows, int cols) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            arr[i][j] = rand() % 10;
+        }
+    }
+}
+
 int main()
 {
     setlocale(LC_ALL, "RU");
 
-    date01_07_2024_6();
+    int rows = 10, cols = 5;
+
+    int** arr = createDoubleArray(rows, cols);
+  
+    setFillArray(arr, rows, cols);
+
+    printArray(arr, rows, cols);
+
+   // int result = getLastDigital(526);
+    //std::cout << result;
 
     system("pause");
 }
