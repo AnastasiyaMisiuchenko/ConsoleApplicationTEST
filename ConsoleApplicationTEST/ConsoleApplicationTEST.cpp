@@ -924,23 +924,63 @@ void date01_07_2024_5() {
     /* Создай двумерный динамический массив размером N на N и заполни его с консоли. 
     После выведи этот массив. Заполнение массива реализуй красиво, чтобы между вводом был пробел 
     где заполняешь строку и перенос строки когда "строка" массива заканчивается (все элементы строки введены).*/
-
+    unsigned int n = 4;
+    //int arr[10][20];
+    int rows = n;
+    int cols = n;
+    int **arr = new int* [rows];
+    for (int i = 0; i < rows; i++) {
+        arr[i] = new int[cols];
+    }
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            std::cout << "arr[" << i << "]" << "[" << j << "] = ";
+            std::cin >> arr[i][j];
+            std::cout << std::endl;
+        }
+    }
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            std::cout << arr[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
 }
 void date01_07_2024_6() {
     /* Создай двумерный динамический массив размером N на N и заполни его с консоли. 
     Спроси у пользователя на какой множитель нужно умножить все элементы массива, умножь и выведи массив 
     который у тебя получился. */
-    int n;
+    unsigned int n = 5;
     //int *arr = new int[n][n];
-
-
-
+    int rows = n;
+    int cols = n;
+    int** arr = new int* [rows];
+    for (int i = 0; i < rows; i++) {
+        arr[i] = new int[cols];
+    }
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            std::cout << "arr[" << i << "]" << "[" << j << "] = ";
+            std::cin >> arr[i][j];
+            std::cout << std::endl;
+        }
+    }
+    int m;
+    std::cout << "На какое число необходимо умножить элементы массива?\n";
+    std::cin >> m;
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            arr[i][j] *= m;
+            std::cout << arr[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
 }
 int main()
 {
     setlocale(LC_ALL, "RU");
 
-    date01_07_2024();
+    date01_07_2024_6();
 
     system("pause");
 }
