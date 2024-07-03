@@ -1015,12 +1015,64 @@ void setFillArray(int** arr, int rows, int cols) {
         }
     }
 }
+void clearConsole() {
+    system("CLS");
+}
+int umnojenie(int x, int y) {
+    int umn = x * y;
+    std::cout << umn << std::endl;
+    return umn;
+}
+int sum(int x, int y) {
+    int sum = x + y;
+    std::cout << sum << std::endl;
+    return sum;
+}
+int raznitca(int x, int y) {
+    int razn = x - y;
+    std::cout << razn << std::endl;
+    return razn;
+}
+int delenie(int x, int y) {
+    int delen = x / y;
+    std::cout << delen << std::endl;
+    return delen;
+}
+void date03_07_2024() {
+    int x, y;
+    int select;
+    do {
+        std::cout << "Введите первое значение\n";
+        std::cin >> x;
+        std::cout << "Введите второе значение\n";
+        std::cin >> y;
+        std::cout << "Вы хотите:\n 1. Найти произведение\n 2. Найти сумму\n 3. Найти разницу\n 4. Найти разность\n 5. Выйти\n";
+        std::cin >> select;
+        if (select == 1) {
+            umnojenie(x, y);
+        }
+        if (select == 2) {
+            sum(x, y);
+        }
+        if (select == 3) {
+            raznitca(x, y);
+        }
+        if (select == 4) {
+            delenie(x, y);
+        }
+        if (select == 5) {
+            std::cout << "Все го хо ро ше го\n";
+        }
+    } while (select != 5);
+
+}
 
 int main()
 {
     setlocale(LC_ALL, "RU");
+    date03_07_2024();
 
-    int rows = 10, cols = 5;
+    /*int rows = 10, cols = 5;
 
     int** arr = createDoubleArray(rows, cols);
   
@@ -1028,8 +1080,10 @@ int main()
 
     printArray(arr, rows, cols);
 
+    clearConsole();
+
    // int result = getLastDigital(526);
-    //std::cout << result;
+    //std::cout << result;*/
 
     system("pause");
 }
