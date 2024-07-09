@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include <math.h>
 #include <algorithm>
+#include <string>
 
 #pragma region MyRegion
 void date16_06_2024() {
@@ -1066,11 +1067,376 @@ void date03_07_2024() {
     } while (select != 5);
 
 }
+void date04_07_2024_1() {
+ /*Напишите программу, которая создает двумерный массив размером m x n(где m и n задаются пользователем),
+ заполняет его значениями по умолчанию (например, нулями), и выводит его на экран. */
+    int m = 0, n = 0;
+  //  int rows = m;
+   // int cols = n;
+  
+    do {
+        std::cout << "Введите размер массива:\nСтроки = ";
+        std::cin >> m;
+    } while (m <= 0);
+    do {
+        std::cout << "Стоблцы = ";
+        std::cin >> n;
+    } while (m <= 0);
+    
+    int** arr = new int* [m];
+    for (int i = 0; i < m; i++) {
+        arr[i] = new int[n];
+    }
+    
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            arr[i][j] = rand() % 10;
+            std::cout << arr[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+    
 
+}
+
+void date04_07_2024_2(){
+ /* Напишите программу, которая создает двумерный массив размером m x n (где m и n задаются пользователем), 
+  заполняет его случайными значениями от 0 до 99 и вычисляет сумму всех элементов массива.*/
+    unsigned int n = 0, m = 0;
+    std::cout << "Введите размер массива:\nСтроки = ";
+    std::cin >> m;
+    std::cout << "Столбцы = ";
+    std::cin >> n;
+    int** arr = new int* [m];
+    for (int i = 0; i < m; i++) {
+        arr[i] = new int[n];
+    }
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+          
+
+            arr[i][j] = rand() % 99 + 0;
+            std::cout << arr[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+    int sum = 0;
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            sum += arr[i][j];
+        }
+    }
+    std::cout << sum << std::endl;
+
+}
+void date04_07_2024_3() { // не сделано
+  /* Напишите программу, которая создает квадратный двумерный массив размером n x n (где n задается пользователем), 
+  заполняет его значениями по возрастанию, начиная с 1, и выводит транспонированную матрицу.*/
+    unsigned int n;
+    std::cout << "Введите размер массива\n";
+    std::cin >> n;
+    int** arr = new int*[n];
+    for (int i = 0; i < n; i++) {
+        arr[i] = new int[n];
+    }
+    int x = 0;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            x++;
+            arr[i][j] = x;
+            std::cout << arr[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+
+}
+void date04_07_2024_4() {
+ /*Напишите программу, которая умножает две матрицы размером m x n и n x p. Размеры m, n и p задаются пользователем, 
+  а элементы матриц вводятся с клавиатуры. */
+}
+void date04_07_2024_5() { // не сделано 
+ /*Напишите программу, которая создает квадратный двумерный массив размером n x n (где n задается пользователем), 
+ заполняет его значениями по возрастанию, начиная с 1, и поворачивает матрицу на 90 градусов по часовой стрелке. */
+    unsigned int n;
+    std::cout << "Введите размер массива\n";
+    std::cin >> n;
+    int** arr = new int* [n];
+    for (int i = 0; i < n; i++) {
+        arr[i] = new int[n];
+    }
+    int x = 0;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            x++;
+            arr[i][j] = x;
+            std::cout << arr[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+    std::cout << std::endl;
+    //int a;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            arr[i][j] = arr[j][i];
+           //arr[i][j] = arr[n - i - 1][j];
+           //arr[n - i - 1][j] = arr[n - i - 1][n - j - 1];
+         // arr[n - i - 1][n - j - 1] = arr[i][n - j - 1];
+           //arr[j][n - i - 1] = a;
+            std::cout << arr[j][i] << " ";
+            
+        }
+        std::cout << std::endl;
+    }
+}
+int max(int x, int y) {
+    int max = 0;
+    if (y > x) {
+        max = y;
+        std::cout << max << std::endl;
+    }
+    if (x > y) {
+        max = x;
+        std::cout << max << std::endl;
+    }
+    if (x == y) {
+       std::cout << "Числа равны\n";
+    }
+    return max;
+}
+void date05_07_2024_6() {
+    /* Напишите функцию max, которая принимает два целых числа и возвращает большее из них. 
+    Напишите программу, которая использует эту функцию для поиска максимального значения из двух чисел, введенных пользователем.*/ 
+    int x, y;
+    std::cout << "Введите числа:\nx = ";
+    std::cin >> x;
+    std::cout << "y = ";
+    std::cin >> y;
+    max(x, y);
+}
+
+
+
+int factorial(int x) {
+    //int factorial;
+    int a = 1;
+    if (x > 0) {
+        for (; x > 1; x--) {
+            a *= x;
+        }
+    }
+    return a;
+}
+void date05_07_2024_7() {
+    /* Напишите функцию factorial, которая принимает целое число и возвращает его факториал. Напишите программу, 
+    которая вызывает эту функцию и выводит результат */
+    int x;
+    std::cout << "Введите число\n";
+    std::cin >> x;
+    std::cout << "Факториал числа равен: " << factorial(x) << std::endl;
+}
+int findMin(int** arr, int n) {
+    int a = 1000;
+    int i = 0;
+    int j = 0;
+         for (i = 0; i < n; i++) {
+             for (j = 0; j < n; j++) {
+                 if (a > arr[i][j]) {
+                     a = arr[i][j];
+                 }
+             }
+         }
+    return a;
+}
+void date05_07_2024_8() {
+    /*Напишите функцию findMin, которая принимает массив целых чисел и его размер, и возвращает минимальное значение в массиве. 
+    Напишите программу, которая использует эту функцию для нахождения минимального значения в массиве, введенном пользователем.*/
+    unsigned int n;
+    std::cout << "Введите размер массива\n";
+    std::cin >> n;
+    int** arr = new int* [n];
+    for (int i = 0; i < n; i++) {
+        arr[i] = new int[n];
+    }
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            std::cout << "arr[" << i << "]" << "[" << j << "] = ";
+            std::cin >> arr[i][j];
+            std::cout << std::endl;
+        }
+    }
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            std::cout << arr[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+    std::cout << "Наименьшее значение в массиве: " << findMin(arr, n) << std::endl;
+
+}
+
+int power(int bace, int exponent) {
+    int p = pow(bace, exponent);
+    return p;
+}
+void date06_07_2024_9() {
+    /*Напишите функцию power, которая принимает два целых числа base и exponent и возвращает значение base в степени exponent. 
+    Напишите программу, которая использует эту функцию для вычисления степени числа, введенного пользователем. */
+    int base, exponent;
+    std::cout << "Введите число и степень:\n" << "Число = ";
+    std::cin >> base;
+    std::cout << "Степень = ";
+    std::cin >> exponent;
+    std::cout << power(base, exponent) << std::endl;
+}
+int averageArray(int** arr, int n) {
+    int sum = 0;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            sum += arr[i][j];
+        }
+    }
+    int q = n * n;
+    sum = sum / q;
+    return sum;
+}
+void date06_07_2024_10() {
+    /*Напишите функцию averageArray, которая принимает массив целых чисел и его размер, и возвращает среднее значение элементов массива. 
+    Напишите программу, которая использует эту функцию для вычисления среднего значения элементов массива, введенного пользователем. */
+    unsigned int n;
+    std::cout << "Введите размер массива\n";
+    std::cin >> n;
+    int** arr = new int* [n];
+    for (int i = 0; i < n; i++) {
+        arr[i] = new int[n];
+    }
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            std::cout << "arr[" << i << "]" << "[" << j << "] = ";
+            std::cin >> arr[i][j];
+            std::cout << std::endl;
+        }
+    }
+    std::cout << averageArray(arr, n) << std::endl;
+}
+int nod(int x, int y) {
+    while (x != y) {
+        if (x > y) {
+            x -= y;
+        }
+        else { 
+            y -= x;
+        }
+    }
+    return x;
+}
+void date09_07_2024_1() {
+    /* .Напишите функцию, которая принимает два целых числа a и b и возвращает их наибольший общий делитель (НОД) 
+    с использованием алгоритма Евклида. */
+    int x, y;
+   
+    do {
+        std::cout << "Введите первое число: ";
+        std::cin >> x;
+    } while (x <= 0); 
+    
+    do {
+        std::cout << "Введите второе число: ";
+        std::cin >> y;
+    } while (y <= 0);
+    std::cout << "Наибольший общий делитель числа равен: " << nod(x, y) << std::endl;
+}
+int fib(int a) {
+    int n = fabs(a);
+
+    /*arr[0] = 0;
+    arr[1] = 1;
+    arr[2] = 1;
+    int i;
+    for (i = 2; i < n; i++) {
+        arr[i] = arr[i - 1] + arr[i - 2];
+        std::cout << arr[i - 1] << std::endl;
+    }*/
+    /*int x = 1;
+    int y = 0;
+    std::cout << y << std::endl << x << std::endl;
+    for (int i = 0; i <= n; i++) {
+        int j = x + y;
+        x = y;
+        y = j;
+        std::cout << y << std::endl;
+    }*/
+    int x = 0;
+    int y = 1;
+    int f;
+    std::cout << x << std::endl << y << std::endl;
+    for (int i = 0; i < n - 2; i++) {
+        f = x + y;
+        x = y;
+        y = f;
+        std::cout << f << std::endl;
+    }
+    return f;
+}
+void date09_07_2024_2() {
+    /* Напишите функцию, которая принимает целое число n и выводит первые n чисел Фибоначчи. 
+    Используйте цикл для генерации чисел Фибоначчи.*/
+    int a;
+    //int* arr = new int [a];
+    std::cout << "Введите положительное число: ";
+    std::cin >> a;
+    a = fabs(a);
+    fib(a);
+}
+int snum(int num) {
+    int sum = 0;
+    while (num > 0) {
+        sum += num % 10;
+        num /= 10;
+    }
+    return sum;
+}
+void date09_07_2024_3() {
+    /* Напишите функцию, которая принимает целое число n и возвращает сумму его цифр. 
+    Используйте цикл для сложения цифр числа. */
+    int num; 
+    std::cout << "Введите число: ";
+    std::cin >> num;
+    num = fabs(num);
+    std::cout << snum(num) << std::endl;
+}
+int mnum(int num) {
+    std::string txt;
+    txt.resize(10000000);
+    int i = 0;
+
+        while (num > 0) {
+            txt[i] = num % 10 + 48;
+            num /= 10;
+            std::cout << txt[i++] << std::endl;
+        }
+   // std::cout << txt << std::endl;
+   /* for (int i = 0; i < txt.length(); i++) {
+       //x = x * 10;
+        x = x + txt[i] - 48;
+        // int x = stoi(txt);
+    }
+    std::cout << x << std::endl; */
+    int x = stoi(txt);
+    return x;
+}
+void date09_07_2024_4() {
+    /* Напишите функцию, которая принимает целое число n и возвращает число, составленное из его цифр в обратном порядке. 
+    Используйте цикл для создания обратного числа. */
+    int num;
+    std::cout << "Введите число: ";
+    std::cin >> num;
+    num = fabs(num);
+    std::cout << mnum(num) << std::endl;
+}
 int main()
 {
     setlocale(LC_ALL, "RU");
-    date03_07_2024();
+    date09_07_2024_4();
 
     /*int rows = 10, cols = 5;
 
